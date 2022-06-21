@@ -1,4 +1,3 @@
-import string
 from pymongo import MongoClient           # pymongo 임포트
 from datetime import *
 import time
@@ -26,6 +25,6 @@ def Make_Log(User_Name,AccountBalance):
 
 if __name__ == "__main__":
     # Make_Data("nonottlyy")
-    print(Find_Data("nonottlyy"))
+    # print(Find_Data("nonottlyy"))
     Make_Log("nonottlyy",6666)
 
