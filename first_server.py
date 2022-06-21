@@ -17,7 +17,6 @@ def Call_Log():
 
     AccountName = request.args.get('name', "")
     AccountBalance = request.args.get('balance', "")
-    print(AccountBalance)
     Make_Log(AccountName,AccountBalance)
     return "sds"
 
