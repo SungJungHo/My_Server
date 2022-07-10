@@ -1,4 +1,3 @@
-from asyncio.windows_events import NULL
 from pickle import NONE
 from pymongo import MongoClient           # pymongo 임포트
 from datetime import *
