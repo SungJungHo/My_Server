@@ -38,7 +38,6 @@ def Find_AccountBalance(User_Name):
     text_List = []
     deposit_List = []
     deposits_Account = 0
-    # print(user)
     
     if user == None:
         return -1
@@ -53,7 +52,6 @@ def Find_AccountBalance(User_Name):
             if len(deposit_List) > 0:
                 for i in deposit_List:
                     deposits_Account = deposits_Account + i
-                print(deposits_Account)
         AccountBalance = text_List[len(text_List)-1][3] + deposits_Account
         return AccountBalance
 
@@ -61,6 +59,7 @@ if __name__ == "__main__":
     # Find_Data("48093112")
     # Make_Data("nonottlyy")
     # Make_Log("nonottlyy",6666)
-    print(Find_AccountBalance("48093112"))
+    # print(Find_AccountBalance("48093112"))
+    Days = date.today().isoformat()
     # print("gg")
 
