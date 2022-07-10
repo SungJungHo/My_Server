@@ -1,6 +1,9 @@
 from flask import Flask,request
 from DB_find import *
 from datetime import *
+import threading, time
+
+thread_Count = 0
 
 app = Flask(__name__)
 
@@ -8,7 +11,8 @@ app = Flask(__name__)
 def mach_UserName():
 
     temp = request.args.get('name', "")
-    check_User = Find_Data(temp)
+    AccountBalance = request.args.get('AccountBalance', "")
+    check_User = Find_Data(temp,AccountBalance)
 
     return check_User
 
@@ -22,5 +26,13 @@ def Call_Log():
 
 
 if __name__ == '__main__':
+    # def getHtml():
+        
+    #     while True:
+    #         time.sleep(5)
+    #         print(date.today().isoformat())
+    #         print(time.strftime("%H:%M:%S",time.localtime()))
+            
+    # threading.Thread(target=getHtml).start()
     app.run(debug=True,host='0.0.0.0', port=80)
     
