@@ -9,7 +9,7 @@ def Find_Data(User_Name,AccountBalance):
     
     user = db.users.find_one({'name':User_Name})
     bal = Find_AccountBalance(User_Name)
-    print(bal)
+    
     if user == None:
         return "2"
     else :
