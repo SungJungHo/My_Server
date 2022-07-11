@@ -22,7 +22,7 @@ def Find_Data(User_Name,AccountBalance):
 def Make_Log(User_Name,AccountBalance):
     client = MongoClient("mongodb+srv://Cafe:Cafe@cluster1.btsz9.mongodb.net/?retryWrites=true&w=majority")
     db = client.test
-    Days = datetime.now() + timedelta(hours=2)
+    Days = datetime.now() + timedelta(hours=3)
     db.Logs.insert_one({'name':User_Name,"Day":str(Days.date()),"Time":Days.strftime("%H:%M:%S"),"AccountBalance":float(AccountBalance)})
 
 def Make_Deposit(User_Name,UNIX_Time,time,Deposit):
