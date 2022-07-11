@@ -1,7 +1,7 @@
 from flask import Flask,request
 from DB_find import *
 from datetime import *
-import threading, time
+# import threading, time
 
 thread_Count = 0
 
@@ -24,6 +24,22 @@ def Call_Log():
     Make_Log(AccountName,AccountBalance)
     return "sds"
 
+@app.route('/Deposit')
+def Add_Deposit():
+
+    AccountName = request.args.get('name', "")
+    UNIX__Time = request.args.get('UNIX_Time', "")
+    time = request.args.get('time', "")
+    AccountBalance = request.args.get('Deposit', "")
+    Make_Deposit(AccountName,UNIX__Time,time,AccountBalance)
+    return "sds"
+
+@app.route('/Find_Deposit')
+def Finds_Deposit():
+
+    AccountName = request.args.get('name', "")
+    UNIX_Time = Find_Deposit(AccountName)
+    return UNIX_Time
 
 if __name__ == '__main__':
     # def getHtml():
